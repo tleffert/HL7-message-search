@@ -1,3 +1,28 @@
-#searchMenu label,input{
-    display: block;
+body {
+    background-color:#EBEBEB;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+.segment-block p {
+    word-wrap: break-word;
+}
+
+.searchForm {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#header {
+  border-bottom: 1px solid #C3C3C3;
+}
+
+#header-message .small {
+    font-size: 1.5em;
+}
+
+#header-message .large {
+    font-size: 2.5em;
 }

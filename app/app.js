@@ -16,8 +16,9 @@ myApp.config(['$routeProvider',
 
 //This will help mocking a back call for our POST
 myApp.run(function($httpBackend) {
-  //Allows all calls to the view folders
+  //Allows calls to app for file retrieval
   $httpBackend.whenGET(/views\/.*/).passThrough();
+  $httpBackend.whenGET(/partials\/.*/).passThrough();
 
   //Response mock returns Array of Json objects
   $httpBackend.whenPOST('/api/search').respond(function(method, url, data, headers){
