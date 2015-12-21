@@ -12,11 +12,14 @@
             <div id="resultList">
                 <div ng-repeat="msg in vm.hl7Messages.messages | filterMultiple:vm.searchTerm"  class="panel panel-default">
                     <div class="panel-heading">
-                        SOURCE : {{msg.source}} DATE : {{msg.date}}
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">SOURCE : {{msg.source}}</div>
+                            <div class="col-md-6 col-sm-6" >DATE : {{msg.date | date : 'medium'}}</div>
+                        </div>
                     </div>
                     <div class="panel-body">
 
-                        <span ng-bind-html="msg.message | highlight:vm.searchTerm" formathl7="msg.message" ></span>
+                        <span data-ng-bind-html="msg.message | highlight:vm.searchTerm" data-formathl7="msg.message" ></span>
                     </div>
                 </div>
                 <div ng-show="(vm.hl7Messages.messages | filterMultiple:vm.searchTerm).length == 0" class="panel panel-default">

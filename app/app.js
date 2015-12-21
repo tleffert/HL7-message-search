@@ -27,7 +27,7 @@ myApp.run(function($httpBackend) {
   var records =[
                     {
                     'source' : 'somewhere',
-                    'date' : '',
+                    'date' : new Date(),
                     'message' : "MSH|^~\&||GA0000||VAERS PROCESSOR|20010331605||ORU^RO1|20010422GA03|T|2.3.1|||AL|\n"+
                       "PID|||1234^^^^SR~1234-12^^^^LR~00725^^^^MR||Doe^John^Fitzgerald^JR^^^L||20001007|M||2106-3^White^HL70005|123 Peachtree St^APT 3B^Atlanta^GA^30210^^M^^GA067||(678) 555-1212^^PRN|\n"+
                       "NK1|1|Jones^Jane^Lee^^RN|VAB^Vaccine administered by (Name)^HL70063|\n"+
@@ -58,14 +58,14 @@ myApp.run(function($httpBackend) {
                   },
                   {
                   'source' : 'elsewhere',
-                  'date' : '',
+                  'date' : new Date(),
                   'message' : 'MSH|^~\&||GA0000||MA0000|199705221605||VXQ^V01|19970522GA40|T|2.3.1|||AL\n'+
                               'QRD|199705221605|R|I|19970522GA05|||25^RD|^KENNEDY^JOHN^FITZGERALD^JR|VXI^VACCINE INFORMATION^HL70048|^SIIS\n'+
                               'QRF|MA0000||||256946789~19900607~MA~MA99999999~88888888~KENNEDY^JACQUELINE^LEE~BOUVIER~898666725~KENNEDY^JOHN^FITZGERALD~822546618\n'
 
                 },
                   {'source':'not here',
-                   'date':'',
+                   'date':new Date(),
                    'message': 'MSH|^~\&||GA0000||VAERS PROCESSOR|20010331605||ORU^R01|20010422GA03|T|2.3.1|||AL|\n'+
                               'PID|||1234^^^^SR~1234-12^^^^LR~00725^^^^MR||Doe^John^Fitzgerald^JR^^^L||20001007|M||2106-3^White^HL70005|123 Peachtree St^APT 3B^Atlanta^GA^30210^^M^^GA067||(678) 555-1212^^PRN|\n'+
                               'NK1|1|Jones^Jane^Lee^^RN|VAB^Vaccine administered by (Name)^HL70063|\n'+
