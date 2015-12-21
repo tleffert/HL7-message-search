@@ -14,7 +14,9 @@ myApp.filter('highlight',
 
                    //checking for empty strings, they need to be removed from list of terms to search for
                    for(var termIndex in termList) {
-                        if(termList[termIndex]) {
+                        //also remove white space only terms
+                        var whiteSpaceOnly = new RegExp('\\A\\s*\\z');
+                        if(termList[termIndex] && !whiteSpaceOnly.test(termList[termIndex])) {
                             tempList.push(termList[termIndex]);
                         }
                    }
