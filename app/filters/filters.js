@@ -32,7 +32,7 @@ myApp.filter('highlight',
                 //need to specify that we has trusted html being sent back to the html bind.
                 return $sce.trustAsHtml(textToReturn);
             } else if(str) {
-            debugger;
+
                 //If there are no terms (case is initial load more often than not) still want to dress the message up a bit for readability
                  var textToReturn='';
                 var message = str.split('\n');
