@@ -1,12 +1,12 @@
-<div ng-controller="SearchCtrl as vm">
-    <div class="form-group">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-search"></i></div>
-
-            <input type="text" class="form-control" placeholder="Enter search term(s). Separate multiple terms by ','" ng-model="vm.searchTerm">
+<div ng-controller="SearchCtrl as vm" class="container">
+            <div class="row">
+                <div class="col-md-5 col-sm-12 searchForm">
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                    <input type="text" class="form-control" placeholder="Enter search term(s). Separate multiple terms by ','" ng-model="vm.searchTerm">
+                </div>
+            </div>
         </div>
-    </div>
-
     <div>
         <div>
             <div id="resultList">
@@ -17,6 +17,13 @@
                     <div class="panel-body">
 
                         <span ng-bind-html="msg.message | highlight:vm.searchTerm" formathl7="msg.message" ></span>
+                    </div>
+                </div>
+                <div ng-show="(vm.hl7Messages.messages | filterMultiple:vm.searchTerm).length == 0" class="panel panel-default">
+                    <div>
+                            <div class="panel-body">
+                            Your search ({{vm.searchTerm}}) has yielded no results
+                            </div>
                     </div>
                 </div>
 
